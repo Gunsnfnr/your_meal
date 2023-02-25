@@ -1,19 +1,20 @@
-import { Container } from "./components/Container/container.jsx"
+import { Provider } from "react-redux"
+import { Catalog } from "./components/Catalog/Catalog.jsx"
 import { Header } from "./components/Header/Header.jsx"
+import { Navigation } from "./components/Navigation/Navigation.jsx"
+import { store } from "./store/index.js"
 
 export const App = () => {
 
   return (
-    <>
+    <Provider store={store}>
       <Header />
       <main>
-        <nav>
-          <Container className="navigation__container"/>
-        </nav>
-        <section></section>
+        <Navigation />
+        <Catalog />
       </main>
       <footer></footer>
-    </>
+    </Provider>
   )
 }
 
